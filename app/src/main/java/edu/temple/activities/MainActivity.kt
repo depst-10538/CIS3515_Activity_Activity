@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-
+const val MESSAGE_KEY = "size"
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             // TODO Step 2: Implement lambda body to launch new activity and pass value
             adapter = TextSizeAdapter(textSizes){item: Int ->
                 val intent = Intent(this@MainActivity,DisplayActivity::class.java)
-                intent.putExtra("size",item)
+                intent.putExtra(MESSAGE_KEY,item)
                 startActivity(intent)
             }
             layoutManager = LinearLayoutManager(this@MainActivity)
